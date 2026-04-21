@@ -81,4 +81,10 @@ class Cashier_model extends CI_Model {
 
         return $query->result();
     }
+
+
+    // DYAT
+
+   
+    // DYAT
 }

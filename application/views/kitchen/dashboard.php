@@ -33,7 +33,8 @@
 									<div class="widget-summary-col">
 										<div class="summary">
 											<div class="info">
-												<strong class="amount">Order #<?= $ordercount ?></strong>
+												<!-- <strong class="amount">Order #<?= $ordercount ?></strong> -->
+                                                <strong class="amount">Order ID: <?= $order->id ?></strong>
 											</div>
 										</div>
 									</div>
@@ -45,7 +46,8 @@
 		                <?= form_open($this->uri->segment(1).'/execOrderPrepared', array('id' => 'orderlist', 'class' => 'form-horizontal form-bordered',  'method' => 'post', 'enctype' => 'multipart/form-data')) ?>
                         <section class="panel">
                             <header class="panel-heading">
-                                <h2 class="panel-title">Order #<?= $ordercount ?></h2>
+                                <!-- <h2 class="panel-title">Order #<?= $ordercount ?></h2> -->
+                                <h2 class="panel-title">Order ID: <?= $order->id ?></h2>
                             </header>
                             <div class="panel-body">
                                 <input type="hidden" name="order_id" value="<?= $order->id ?>" />

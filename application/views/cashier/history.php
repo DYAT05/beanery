@@ -31,13 +31,22 @@
 
                         <div class="col-md-2" style="margin-top:25px;">
                             <button type="submit" class="btn btn-primary">Filter</button>
+                            <a href="<?= site_url('cashier/history') ?>" class="btn btn-default">Reset</a>
                         </div>
 
                         <div class="col-md-2" style="margin-top:25px;">
                         <!-- <a href="<?= base_url('transaction_history') ?>" class="btn btn-default">Reset</a> -->
-                        <a href="<?= site_url('cashier/history') ?>" class="btn btn-default">Reset</a>
+
+                         <a href="<?= site_url('cashier/downloadHistory?start_date=' . ($_GET['start_date'] ?? '') . '&end_date=' . ($_GET['end_date'] ?? '')) ?>" 
+                               class="btn btn-primary">
+                                Download
+                            </a>
+
                         </div>
+
+
                     </div>
+
                 </form>
 
                     

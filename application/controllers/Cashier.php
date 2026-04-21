@@ -259,4 +259,46 @@ public function history(){
 
 		$this->load->view('cashier/ending_session', $data);
 	}
+
+	// DYAT
+
+	public function downloadHistory()
+{
+    $transacted = array('prepared', 'paid');
+
+    $start_date = $this->input->get('start_date');
+    $end_date   = $this->input->get('end_date');
+
+    if (!empty($start_date)) {
+        $start_date = date('Y-m-d H:i:s', strtotime($start_date));
+    }
+
+    if (!empty($end_date)) {
+        $end_date = date('Y-m-d H:i:s', strtotime($end_date . ' +1 minute -1 second'));
+    }
+
+
+    $orders = $this->General->getAllTransactionOrders($transacted, $start_date, $end_date);
+
+    header("Content-Type: text/csv");
+    header("Content-Disposition: attachment; filename=transaction_history.csv");
+
+    $output = fopen("php://output", "w");
+
+    // Header
+    fputcsv($output, ['Datetime', 'Ordered By', 'Total Amount']);
+
+    foreach ($orders as $order) {
+        fputcsv($output, [
+            $order->created_at,
+            $order->name,
+            number_format($order->total_amount, 2)
+        ]);
+    }
+
+    fclose($output);
+    exit;
+}
+
+	// DYAT
 }

@@ -218,7 +218,12 @@
                             <div class="form-group">
                                 <label class="col-md-4 text-left" for="customer_note">Customer Notes:</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" required name="customer_note" id="customer_note" placeholder="Enter Notes here...">
+                                    <!-- <input type="text" class="form-control" required name="customer_note" id="customer_note" placeholder="Enter Notes here..."> -->
+
+
+                                    <!-- DYAT -->
+                                    <input type="text" class="form-control" name="customer_note" id="customer_note" value="none" placeholder="Enter Notes here...">
+                                    <!-- DYAT -->
                                 </div>
                             </div>
                             <hr>

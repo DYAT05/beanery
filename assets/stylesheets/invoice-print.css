@@ -724,6 +724,8 @@ html.dark .table .actions-hover a {
 	}
 }
 /* Invoice Print */
+
+
 @media print {
 	.invoice .table-responsive {
 		border: none !important;
@@ -743,21 +745,27 @@ html.dark .table .actions-hover a {
 
 	.invoice header .col-sm-6:first-child {
 		width: 25% !important;
+
 	}
 
 	.invoice header .col-sm-6:last-child {
 		width: 75% !important;
+
 	}
 
 	.invoice .bill-info .col-md-6 {
 		width: 50% !important;
+
 	}
 
 	.invoice .invoice-summary .col-sm-4 {
 		float: right;
 		padding: 0;
 		width: 40%;
+
+
 	}
+
 }
 /* dark */
 html.dark .invoice header {
