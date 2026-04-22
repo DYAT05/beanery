@@ -12,6 +12,7 @@
 
 	<!-- start: page -->
 	<section class="panel">
+
 		<div class="col-md-12 col-lg-12 col-xl-12">
 			<div class="row">
                 <?php 

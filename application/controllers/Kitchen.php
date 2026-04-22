@@ -58,7 +58,10 @@ class Kitchen extends CI_Controller {
 	    $this->db->update('order_detail');
 
 	    //  LOAD ONLY TODAY'S ORDERS (for kitchen dashboard)
-	    $this->db->where('DATE(created_at) = CURDATE()', NULL, FALSE);
+	    // $this->db->where('DATE(created_at) = CURDATE()', NULL, FALSE);
+		$today = date('Y-m-d'); // get today's date in 'YYYY-MM-DD'
+		$this->db->where('created_at >=', $today . ' 00:00:00');
+		$this->db->where('created_at <=', $today . ' 23:59:59');
 	    $this->db->where('order_status', 'paid');
 	    $data['orders'] = $this->db->get('order_header')->result();
 
