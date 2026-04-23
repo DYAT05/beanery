@@ -33,3 +33,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# Local environment configs
+application/config/database.php
+application/config/config.php
